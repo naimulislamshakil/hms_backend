@@ -19,7 +19,9 @@ app.use(cookiePerser());
 
 // add mongoose
 mongoose
-	.connect('mongodb://localhost:27017')
+	.connect(
+		`mongodb+srv://hms:${process.env.DB_PASS}@cluster0.pdxsa71.mongodb.net/?retryWrites=true&w=majority`
+	)
 	.then(() => console.log('Database is connected successfully'))
 	.catch((e) => console.log(e));
 
